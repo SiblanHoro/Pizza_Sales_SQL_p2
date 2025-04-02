@@ -60,7 +60,7 @@ WHERE order_details_id IS NULL
    OR
    pizza_id IS NULL
    OR
-   quantity IS NULL
+   quantity IS NULL```
 
 -------------------BASIC------------------------
 ---1. Retrieve the total number of orders placed.
@@ -68,7 +68,7 @@ WHERE order_details_id IS NULL
 ```SELECT 
     COUNT(*) AS Total_Orders
 FROM 
-    orders$;
+    orders$;```
 
 ---2. Calculate the total revenue generated from pizza sales.
 
@@ -79,7 +79,7 @@ FROM
     pizzas$
 JOIN 
     order_details$ ON pizzas$.pizza_id = 
-order_details$.pizza_id;
+order_details$.pizza_id;```
 
 ---3. Identify the highest-priced pizza.
 
@@ -93,7 +93,7 @@ JOIN
 	On pizza_types$.pizza_type_id = 
 pizzas$.pizza_type_id
 ORDER BY 
-    pizzas$.Price DESC;
+    pizzas$.Price DESC;```
 
 ---4. Identify the most common pizza size ordered.
 
@@ -110,7 +110,7 @@ order_details$.pizza_id
 GROUP BY 
      pizzas$.size
 ORDER BY 
-     Order_Count DESC;
+     Order_Count DESC;```
 
 ---------------------------INTERMEDIATE----------------------------------
 ---5. List the top 5 most ordered pizza types along with their quantities.
@@ -131,7 +131,7 @@ pizzas$.pizza_id
 GROUP BY 
     pizza_types$.name
 ORDER BY 
-    Quantity DESC;
+    Quantity DESC;```
 
 ---6. Join the necessary tables to find the total quantity of each pizza category ordered.
 
@@ -151,7 +151,7 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.category
 ORDER BY 
-    Total_Quantity DESC;
+    Total_Quantity DESC;```
 
 ---7. Determine the distribution of orders by hour of the day.
 
@@ -163,7 +163,7 @@ FROM
 GROUP BY 
      DATEPART(HOUR, time)
 ORDER BY 
-     Time_in_Hours;
+     Time_in_Hours;```
 
 ---8. Join relevant tables to find the category-wise distribution of pizzas.
 
@@ -173,7 +173,7 @@ ORDER BY
 FROM 
     pizza_types$
 GROUP BY 
-    Category;
+    Category;```
 
 ----9. Group the orders by date and calculate the average number of pizzas ordered per day.
 
@@ -193,7 +193,7 @@ Quantity
 order_details$.order_id
     GROUP BY 
 	    orders$.Date
-) AS Total_Quantity;
+) AS Total_Quantity;```
 
 ---10. Determine the top 3 most ordered pizza types based on revenue.
 
@@ -213,7 +213,7 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.Name
 ORDER BY 
-    Revenue DESC;
+    Revenue DESC;```
        
 -------------------------------------ADVANCED-------------------------------------------
 
@@ -241,7 +241,7 @@ GROUP BY pizza_types$.Category,
          pizza_types$.Name
      ) AS A
 ) as B
-WHERE RANKS <= 3;
+WHERE RANKS <= 3;```
 
 ---12. Analyze the cumulative revenue generated over time.
 
@@ -258,7 +258,7 @@ pizzas$.pizza_id
 	JOIN orders$ ON order_details$.order_id = 
 orders$.order_id
     GROUP BY orders$.Date
-) AS Sales;
+) AS Sales;```
 
 ---13. Calculate the percentage contribution of each pizza type to total revenue.
 
@@ -286,7 +286,7 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.Category
 ORDER BY 
-    Revenue DESC;
+    Revenue DESC;```
 
 # Insights and Recommendation 
 •	Sales Insights: From previous analysis, it’s evident that Large(L) pizzas are most ordered this suggests that customers prefer larger sizes possibly for sharing.
