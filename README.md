@@ -27,8 +27,8 @@ Includes key tables like:
 --SQL
 
 Use PizzaHut
-
-```SELECT * FROM pizzas$
+```sql
+SELECT * FROM pizzas$
 SELECT * FROM pizzas_types$
 SELECT * FROM orders$
 SELECT * FROM Order_Details$
