@@ -23,7 +23,7 @@ Includes tables like
 
 •	Order_Details(Order_details_id, order_id, pizza_id, Category)
 
- ## Data Exploration & Cleaning
+ ## Data Exploration & CleaningData Cleaning 
 •	Record Count: Determine the total number of records in the dataset.
 
 •	Customer Count: Find out how many unique customers are in the dataset.
@@ -32,7 +32,6 @@ Includes tables like
 
 •	Null Value Check: Check for any null values in the dataset and delete records with missing data.
 
-
 Use PizzaHut
 ```sql
 SELECT * FROM pizzas$
@@ -40,7 +39,6 @@ SELECT * FROM pizzas_types$
 SELECT * FROM orders$
 SELECT * FROM Order_Details$
 ```
---Data Exploration & CleaningData Cleaning 
 ```sql
 SELECT * FROM pizzas$
 WHERE pizza_id IS NULL
