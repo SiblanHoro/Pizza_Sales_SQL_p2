@@ -3,7 +3,7 @@
 **Level**: Intermediate  
 **Database**: `PizzaHut
 
-In this project, we aim to analyze pizza sales data using SQL to extract valuable insights. By examining sales patterns, identifying customer preferences, and understanding revenue trends, we can provide actionable recommendations to improve business performance. SQL will help us effciently query large datasets, perform cleaning, and generate reports for better decision-making. This analysis can assist in optimizing inventory inventory, tailoring market strategies and customer satisfaction. 
+In this project, we aim to analyze pizza sales data using SQL to extract valuable insights. By examining sales patterns, identifying customer preferences, and understanding revenue trends, we can provide actionable recommendations to improve business performance. SQL will help us effciently query large datasets, perform cleaning, and generate reports for better decision-making. This analysis can assist in optimizing inventory, tailoring market strategies and customer satisfaction. 
  `
 ## Objectives
 
@@ -13,7 +13,7 @@ In this project, we aim to analyze pizza sales data using SQL to extract valuabl
 4. Business Analysis: Use SQL to answer specific business questions and derive insights from the sales data.
 
 # Data Schema
-Includes key tables like:
+Includes tables like
 
 •	Pizzas (Pizza_Id, Pizza_type_id, Size, Price)
 
