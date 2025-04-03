@@ -27,14 +27,14 @@ Includes key tables like:
 
 
 Use PizzaHut
-
+```sql
 SELECT * FROM pizzas$
 SELECT * FROM pizzas_types$
 SELECT * FROM orders$
 SELECT * FROM Order_Details$
-
+```
 --Data Exploration & CleaningData Cleaning 
-
+```sql
 SELECT * FROM pizzas$
 WHERE pizza_id IS NULL
    OR 
@@ -61,8 +61,7 @@ WHERE order_details_id IS NULL
    pizza_id IS NULL
    OR
    quantity IS NULL
-
-
+```
 3. Data Analysis & Findings
 The following SQL queries were developed to answer specific business questions:
 
