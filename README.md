@@ -14,9 +14,13 @@ In this project, we aim to analyze pizza sales data using SQL to extract valuabl
 
 # Data Schema
 Includes key tables like:
+
 •	Pizzas (Pizza_Id, Pizza_type_id, Size, Price)
+
 •	Pizza_Types(pizza_type_id, Name, Category, Ingredients)
+
 •	Orders(Order_id, Date, Time)
+
 •	Order_Details(Order_details_id, order_id, pizza_id, Category)
 
  # Data Exploration & Cleaning
