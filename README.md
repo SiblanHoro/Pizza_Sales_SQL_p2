@@ -67,7 +67,7 @@ WHERE order_details_id IS NULL
    OR
    quantity IS NULL
 ```
-3. Data Analysis & Findings
+### Data Analysis & Findings
 The following SQL queries were developed to answer specific business questions:
 
 ---1. Retrieve the total number of orders placed.
