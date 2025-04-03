@@ -294,11 +294,13 @@ ORDER BY
 # Insights and Recommendation 
 
 •  Sales Insights: From previous analysis, it’s evident that Large(L) pizzas are most ordered this suggests that customers prefer larger sizes possibly for sharing.
+
 •  Order volume by Time of Day: Analyze peak hours of pizza orders. Typically, lunch and dinner hours (1PM-9PM) see most actively.
 
-# RECCOMENDATIONS: 
+# Reccomendation: 
 
 •  Promote baverages, sides, and desserts with pizza orders to increase average order value.
+
 •  If specific regions show high sales, run localized ad campaigns or collaborate with nearby business.
 
 # Conclusion 
