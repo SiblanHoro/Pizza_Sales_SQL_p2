@@ -12,7 +12,7 @@ In this project, we aim to analyze pizza sales data using SQL to extract valuabl
 3. Provide data driven recommendations to optimize sales and inventory.
 4. Business Analysis: Use SQL to answer specific business questions and derive insights from the sales data.
 
-# Data Schema
+## Data Schema
 Includes tables like
 
 •	Pizzas (Pizza_Id, Pizza_type_id, Size, Price)
@@ -23,10 +23,13 @@ Includes tables like
 
 •	Order_Details(Order_details_id, order_id, pizza_id, Category)
 
- # Data Exploration & Cleaning
+ ## Data Exploration & Cleaning
 •	Record Count: Determine the total number of records in the dataset.
+
 •	Customer Count: Find out how many unique customers are in the dataset.
+
 •	Category Count: Identify all unique product categories in the dataset.
+
 •	Null Value Check: Check for any null values in the dataset and delete records with missing data.
 
 
@@ -294,19 +297,19 @@ ORDER BY
     Revenue DESC;
 ```
 
-# Insights and Recommendation 
+## Insights and Recommendation 
 
 •  Sales Insights: From previous analysis, it’s evident that Large(L) pizzas are most ordered this suggests that customers prefer larger sizes possibly for sharing.
 
 •  Order volume by Time of Day: Analyze peak hours of pizza orders. Typically, lunch and dinner hours (1PM-9PM) see most actively.
 
-# Reccomendation: 
+## Reccomendation: 
 
 •  Promote baverages, sides, and desserts with pizza orders to increase average order value.
 
 •  If specific regions show high sales, run localized ad campaigns or collaborate with nearby business.
 
-# Conclusion 
+## Conclusion 
 
 The pizza sales project provided meaningful insights into customer preferences, sales performance, and revenue trends. By leberaging SQL for data extraction and analysis.
 the analysis higlighted the dominance of large and medium-sized pizzas in sales volume, confirming their popularity among customers.
