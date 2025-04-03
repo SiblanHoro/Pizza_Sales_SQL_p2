@@ -7,14 +7,14 @@ In this project, we aim to analyze pizza sales data using SQL to extract valuabl
  `
 ## Objectives
 
-1. **Analyze pizza sales data to extract insights.
-2. ***Identify best selling pizzas, peak sales times, and customer preferences.
-3. ***Provide data driven recommendations to optimize sales and inventory.
-4. **Business Analysis**: Use SQL to answer specific business questions and derive insights from the sales data.
+1. Analyze pizza sales data to extract insights.
+2. Identify best selling pizzas, peak sales times, and customer preferences.
+3. Provide data driven recommendations to optimize sales and inventory.
+4. Business Analysis: Use SQL to answer specific business questions and derive insights from the sales data.
 
 # Data Schema
 Includes key tables like:
-•	 Pizzas (Pizza_Id, Pizza_type_id, Size, Price)
+•	Pizzas (Pizza_Id, Pizza_type_id, Size, Price)
 •	Pizza_Types(pizza_type_id, Name, Category, Ingredients)
 •	Orders(Order_id, Date, Time)
 •	Order_Details(Order_details_id, order_id, pizza_id, Category)
@@ -24,10 +24,10 @@ Includes key tables like:
 •	Customer Count: Find out how many unique customers are in the dataset.
 •	Category Count: Identify all unique product categories in the dataset.
 •	Null Value Check: Check for any null values in the dataset and delete records with missing data.
---SQL
+
 
 Use PizzaHut
-```sql
+
 SELECT * FROM pizzas$
 SELECT * FROM pizzas_types$
 SELECT * FROM orders$
@@ -60,16 +60,19 @@ WHERE order_details_id IS NULL
    OR
    pizza_id IS NULL
    OR
-   quantity IS NULL```
+   quantity IS NULL
 
--------------------BASIC------------------------
+
+3. Data Analysis & Findings
+The following SQL queries were developed to answer specific business questions:
+
 ---1. Retrieve the total number of orders placed.
-
-```SELECT 
+```sql
+SELECT 
     COUNT(*) AS Total_Orders
 FROM 
-    orders$;```
-
+    orders$;
+```
 ---2. Calculate the total revenue generated from pizza sales.
 
 ```SELECT 
