@@ -75,18 +75,19 @@ FROM
 ```
 ---2. Calculate the total revenue generated from pizza sales.
 
-```SELECT 
+```sql
+SELECT 
      ROUND(SUM(pizzas$.price * 
 order_details$.quantity), 2) AS Total_revenue
 FROM 
     pizzas$
 JOIN 
     order_details$ ON pizzas$.pizza_id = 
-order_details$.pizza_id;```
-
+order_details$.pizza_id;
+```
 ---3. Identify the highest-priced pizza.
-
-```SELECT TOP 1 
+```sql
+SELECT TOP 1 
     pizza_types$.Name, 
     pizzas$.Price
 FROM 
@@ -96,11 +97,11 @@ JOIN
 	On pizza_types$.pizza_type_id = 
 pizzas$.pizza_type_id
 ORDER BY 
-    pizzas$.Price DESC;```
-
+    pizzas$.Price DESC;
+```
 ---4. Identify the most common pizza size ordered.
-
-```SELECT 
+```sql
+SELECT 
      pizzas$.size, 
      COUNT(order_details$.Order_details_id) AS 
 Order_Count
@@ -113,12 +114,11 @@ order_details$.pizza_id
 GROUP BY 
      pizzas$.size
 ORDER BY 
-     Order_Count DESC;```
-
----------------------------INTERMEDIATE----------------------------------
+     Order_Count DESC;
+```
 ---5. List the top 5 most ordered pizza types along with their quantities.
-
-```SELECT TOP 5 
+```sql
+SELECT TOP 5 
     pizza_types$.name,  
     SUM(order_details$.quantity) AS Quantity
 FROM 
@@ -134,11 +134,11 @@ pizzas$.pizza_id
 GROUP BY 
     pizza_types$.name
 ORDER BY 
-    Quantity DESC;```
-
+    Quantity DESC;
+```
 ---6. Join the necessary tables to find the total quantity of each pizza category ordered.
-
-```SELECT 
+```sql
+SELECT 
     pizza_types$.category, 
     SUM(order_details$.quantity) AS Total_Quantity
 FROM 
@@ -154,11 +154,11 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.category
 ORDER BY 
-    Total_Quantity DESC;```
-
+    Total_Quantity DESC;
+```
 ---7. Determine the distribution of orders by hour of the day.
-
-```SELECT 
+```sql
+SELECT 
      DATEPART(HOUR, time) AS Time_in_Hours,
      COUNT(order_id) AS Orders_Count
 FROM 
@@ -166,21 +166,21 @@ FROM
 GROUP BY 
      DATEPART(HOUR, time)
 ORDER BY 
-     Time_in_Hours;```
-
+     Time_in_Hours;
+```
 ---8. Join relevant tables to find the category-wise distribution of pizzas.
-
-```SELECT 
+```sql
+SELECT 
     Category, 
     COUNT(Name) AS Pizza_Types 
 FROM 
     pizza_types$
 GROUP BY 
-    Category;```
-
+    Category;
+```
 ----9. Group the orders by date and calculate the average number of pizzas ordered per day.
-
-```SELECT 
+```sql
+SELECT 
     ROUND(AVG(Quantity), 0) AS 
 Average_Orders_PerDay
 FROM (
@@ -196,11 +196,11 @@ Quantity
 order_details$.order_id
     GROUP BY 
 	    orders$.Date
-) AS Total_Quantity;```
-
+) AS Total_Quantity;
+```
 ---10. Determine the top 3 most ordered pizza types based on revenue.
-
-```SELECT TOP 3 
+```sql
+SELECT TOP 3 
     pizza_types$.Name,
     SUM(order_details$.Quantity * pizzas$.Price) AS Revenue
 FROM 
@@ -216,13 +216,11 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.Name
 ORDER BY 
-    Revenue DESC;```
-       
--------------------------------------ADVANCED-------------------------------------------
-
+    Revenue DESC;
+```       
 ---11. Determine the top 3 most ordered pizza types based on revenue for each pizza category.
-
-```SELECT Name, 
+```sql
+SELECT Name, 
        Revenue
 FROM (
     SELECT Category, 
@@ -244,11 +242,11 @@ GROUP BY pizza_types$.Category,
          pizza_types$.Name
      ) AS A
 ) as B
-WHERE RANKS <= 3;```
-
+WHERE RANKS <= 3;
+```
 ---12. Analyze the cumulative revenue generated over time.
-
-```SELECT Date,
+```sql
+SELECT Date,
       SUM(Revenue) OVER(ORDER BY Date) AS 
 Cum_Revenue
 FROM (
@@ -261,11 +259,12 @@ pizzas$.pizza_id
 	JOIN orders$ ON order_details$.order_id = 
 orders$.order_id
     GROUP BY orders$.Date
-) AS Sales;```
-
+) AS Sales;
+```
 ---13. Calculate the percentage contribution of each pizza type to total revenue.
 
-```SELECT 
+```sql
+SELECT 
     pizza_types$.Category,
     ROUND(SUM(pizzas$.price * order_details$.Quantity) / (SELECT 
 	ROUND(SUM(pizzas$.price * order_details$.Quantity),
@@ -289,15 +288,18 @@ order_details$.pizza_id
 GROUP BY 
     pizza_types$.Category
 ORDER BY 
-    Revenue DESC;```
+    Revenue DESC;
+```
 
 # Insights and Recommendation 
-•	Sales Insights: From previous analysis, it’s evident that Large(L) pizzas are most ordered this suggests that customers prefer larger sizes possibly for sharing.
-•	Order volume by Time of Day: Analyze peak hours of pizza orders. Typically, lunch and dinner hours (1PM-9PM) see most actively.
+
+•  Sales Insights: From previous analysis, it’s evident that Large(L) pizzas are most ordered this suggests that customers prefer larger sizes possibly for sharing.
+•  Order volume by Time of Day: Analyze peak hours of pizza orders. Typically, lunch and dinner hours (1PM-9PM) see most actively.
 
 # RECCOMENDATIONS: 
-•	Promote baverages, sides, and desserts with pizza orders to increase average order value.
-•	If specific regions show high sales, run localized ad campaigns or collaborate with nearby business.
+
+•  Promote baverages, sides, and desserts with pizza orders to increase average order value.
+•  If specific regions show high sales, run localized ad campaigns or collaborate with nearby business.
 
 # Conclusion 
 
